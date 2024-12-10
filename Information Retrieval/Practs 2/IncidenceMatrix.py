@@ -51,5 +51,6 @@ print("\nIncidence Matrix:")
 print("\nTerms:", terms_list)
 print("\nDocuments:", files)
 print("\nMatrix:")
-for i, term in enumerate(terms_list):
-    print(f"{term:15} {incidence_matrix[i]}")
+for term_index in range(len(terms_list)):
+    print(terms_list[term_index], incidence_matrix[term_index])
+ 
