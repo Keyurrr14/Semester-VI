@@ -45,8 +45,9 @@ for i in range(len(terms_list)):
     for j in range(len(files)):
         incidence_matrix[i][j] = 1 if terms_list[i] in documents[files[j]] else 0
 
+matrix_size = f"{len(terms_list)} x {len(files)}"
+
 print("\nIncidence Matrix:")
-print("Terms x Documents:", matrix_size)
 print("\nTerms:", terms_list)
 print("\nDocuments:", files)
 print("\nMatrix:")
