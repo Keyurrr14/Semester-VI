@@ -81,3 +81,33 @@ def main():
     pagerank(graph, 0.85)
 
 main()
+
+
+
+
+import numpy as np
+from fractions import Fraction
+matrix = np.matrix([
+    [0, Fraction(1,2),Fraction(1,2)],
+    [1,0,0],
+    [1,0,0]
+])
+
+r = Fraction(1/3)
+beta = 0.5
+m2 = np.zeros((3,3))
+m2[:] = r
+
+m3 = beta * matrix + ( (1 - beta) * m2 )
+
+r1 = np.matrix([0,0,1])
+r1 = np.transpose(r1)
+
+temp = r1
+for i in range(100):
+    r1 = m3 * r1  
+    if(r1 == temp).all():
+        break    
+    temp = r1
+print(r1) 
+print(sum(r1))
